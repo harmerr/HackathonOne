@@ -8,8 +8,8 @@ public class Person extends Contact {
 	private String email;
 	private Date dob;
 
-	public Person(String name, String phonebook, LocalDateTime createdat, String email, Date dob) {
-		super(name, phonebook, createdat);
+	public Person(String name, String phonebook, LocalDateTime createdAt, String email, Date dob) {
+		super(name, phonebook, createdAt);
 		this.email = email;
 		this.dob = dob;
 	}
@@ -17,6 +17,6 @@ public class Person extends Contact {
 @Override
 public String toString() {
 return "Person [email=" + email + ", dob=" + dob + ", getName()=" + getName() + ", getPhonebook()="
-+ getPhonebook() + ", getCreatedat()=" + getCreatedat() + ", verifier()=" + verifier() + ", getClass()="
++ getPhonebook() + ", getcreatedAt()=" + getcreatedAt() + ", verifier()=" + verifier() + ", getClass()="
 + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 }
