@@ -12,6 +12,11 @@ public class Main {
 
 	public static void main(String[] args) {
 
+		//ArrayList Contact
+		ArrayList<Contact> contact = new ArrayList<Contact>();
+		contact.add(new Contact());
+		//String name;String phoneNumber;createdAt;
+		
 		Scanner input = new Scanner(System.in);
 
 		
