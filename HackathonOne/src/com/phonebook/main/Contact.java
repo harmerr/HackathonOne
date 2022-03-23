@@ -8,13 +8,13 @@ public class Contact {
 
 	protected String name;
 	protected String phonebook;
-	protected LocalDateTime createdat;
+	protected LocalDateTime createdAt;
 
 	public Contact(String name, String phonebook) {
 		super();
 		this.name = name;
 		this.phonebook = phonebook;
-		this.createdat = LocalDateTime.now();
+		this.createdAt = LocalDateTime.now();
 	}
 
 	public String getName() {
@@ -33,12 +33,12 @@ public class Contact {
 		this.phonebook = phonebook;
 	}
 
-	public LocalDateTime getCreatedat() {
-		return createdat;
+	public LocalDateTime getcreatedAt() {
+		return createdAt;
 	}
 
-	public void setCreatedat(LocalDateTime createdat) {
-		this.createdat = createdat;
+	public void setcreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
 	}
 
 	public boolean verifier() {
