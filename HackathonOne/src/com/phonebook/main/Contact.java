@@ -3,6 +3,8 @@
 package com.phonebook.main;
 
 import java.time.LocalDateTime;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Contact {
 
@@ -33,9 +35,14 @@ public class Contact {
 	public void setcreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
+	
+	
 
-	public boolean verifier() {
-		return false;
+	public static boolean verifier(String phoneNumber) {
+		Pattern ptrn = Pattern.compile("xxx-xxx-xxxx"); 
+		Matcher match = ptrn.matcher(phoneNumber);
+			
+		return (match.find() && match.group().equals(phoneNumber));
 
 	}
 
