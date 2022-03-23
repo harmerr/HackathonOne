@@ -7,13 +7,13 @@ import java.time.LocalDateTime;
 public class Contact {
 
 	protected String name;
-	protected String phonebook;
+	protected String phonenumber;
 	protected LocalDateTime createdat;
 
-	public Contact(String name, String phonebook) {
+	public Contact(String name, String phonenumber) {
 		super();
 		this.name = name;
-		this.phonebook = phonebook;
+		this.phonenumber = phonenumber;
 		this.createdat = LocalDateTime.now();
 	}
 
@@ -25,12 +25,12 @@ public class Contact {
 		this.name = name;
 	}
 
-	public String getPhonebook() {
-		return phonebook;
+	public String getphonenumber() {
+		return phonenumber;
 	}
 
-	public void setPhonebook(String phonebook) {
-		this.phonebook = phonebook;
+	public void setphonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
 	}
 
 	public LocalDateTime getCreatedat() {
