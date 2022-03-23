@@ -8,12 +8,16 @@ import java.util.*;
 
 public class Main {
 	
-	//ArrayList Contact 
-	//ArrayList<Contact> contact = new ArrayList<Contact>();
+	
 	
 	
 
 	public static void main(String[] args) {
+		//ArrayList Contact 
+		ArrayList<Contact> contact = new ArrayList<Contact>();
+		contact.add(new Contact());
+		//String name;String phoneNumber;createdAt;
+		
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -33,7 +37,9 @@ public class Main {
 		
 		
 
+	
 	}
+}
 	
 	
 	
