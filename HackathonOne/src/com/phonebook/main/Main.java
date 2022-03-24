@@ -7,13 +7,32 @@ package com.phonebook.main;
 import java.time.LocalDateTime;
 import java.util.*;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.File;
+
 public class Main {
 
 	static ArrayList<Contact> contact = new ArrayList<Contact>();
 	
 	static Scanner input = new Scanner(System.in);
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException {
+		
+		try {
+			FileInputStream fileInputStream = new FileInputStream(new File("..\\HackathonOne\\HackathonOne\\src\\com\\phonebook\\main\\arrayList.txt"));
+			ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+			
+			contact = (ArrayList<Contact>) objectInputStream.readObject();
+			
+			objectInputStream.close();
+		} 
+		catch(IOException e) {
+			e.printStackTrace();
+		}
 		
 	/*	HashMap<String, String> organizations = new  HashMap <String, String> (); 
 		HashMap<String, String> persons = new HashMap <String, String> (); 
@@ -125,6 +144,16 @@ public class Main {
 		// HashMap to store all search results ID & Name
 		// File Writer,File Reader
 
+		try {
+			FileOutputStream fileOutputStream = new FileOutputStream(new File("..\\HackathonOne\\HackathonOne\\src\\com\\phonebook\\main\\arrayList.txt"));
+			ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+			objectOutputStream.writeObject(contact);
+			objectOutputStream.close();
+		} 
+		
+		catch(IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	// **MENU METHODS**
@@ -134,7 +163,7 @@ public class Main {
 		System.out.println("Would you like to create a Person or Organization contact?");
 		String userInput = input.nextLine().toLowerCase();
 
-		if (userInput.equals("person")) {
+		if(userInput.equals("person")) {
 			System.out.println("Enter the person's name ");
 			String userName = input.nextLine();
 
@@ -142,9 +171,10 @@ public class Main {
 			String userNumber = input.nextLine();
 			
 			boolean isNumberValid = Contact.verifier(userNumber);
-			if (!isNumberValid) {  
+			if(!isNumberValid) {  
 				System.out.println("The Phone number is not valid");
-			} else {
+			}
+			else {
 				System.out.println("The phone number is valid!");
 			}
 			
@@ -161,7 +191,7 @@ public class Main {
 			System.out.println("Contact added successfully! \n");
 		}
 
-		else if (userInput.equals("organization")) {
+		else if(userInput.equals("organization")) {
 			System.out.println("Enter the organization's name ");
 			String userName = input.nextLine();
 

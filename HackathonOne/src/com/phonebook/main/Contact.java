@@ -1,10 +1,11 @@
 package com.phonebook.main;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Contact {
+public class Contact implements Serializable {
 
 	protected String name;
 	protected String phoneNumber;

@@ -1,8 +1,9 @@
 package com.phonebook.main;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Organization extends Contact {
+public class Organization extends Contact implements Serializable {
 
 	String website;
 
