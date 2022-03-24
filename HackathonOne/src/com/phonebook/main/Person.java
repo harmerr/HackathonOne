@@ -1,6 +1,5 @@
 package com.phonebook.main;
 
-import java.util.*;
 import java.time.LocalDateTime;
 
 public class Person extends Contact {
@@ -16,10 +15,8 @@ public class Person extends Contact {
 
 	@Override
 	public String toString() {
-		return "Person [email=" + email + ", dob=" + dob + ", name=" + name + ", phoneNumber=" + phoneNumber
-				+ ", createdAt=" + createdAt + ", getName()=" + getName() + ", getPhoneNumber()=" + getPhoneNumber()
-				+ ", getcreatedAt()=" + getcreatedAt() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+		return "Person [Name: " + name + ", date of birth: " + dob + ", eMail: " + email + ", phone number=" + phoneNumber
+				+ ", created at: " + createdAt + "]";
 	}
 	
 }
