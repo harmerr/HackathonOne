@@ -6,16 +6,17 @@ public class Organization extends Contact {
 
 	String website;
 
-	public Organization(String name, String phoneNumber,  String website) {
-		super(name, phoneNumber);
+	public Organization(String name, String phoneNumber, LocalDateTime createdAt, String website) {
+		super(name, phoneNumber, createdAt);
 		this.website = website;
 	}
 
 	@Override
 	public String toString() {
-		return "Organization [website=" + website + ", getName()=" + getName() + ", getphoneNumber()=" + getphoneNumber()
-				+ ", getcreatedAt()=" + getcreatedAt() + ", verifier()=" + verifier() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+		return "Organization [website=" + website + ", name=" + name + ", phoneNumber=" + phoneNumber + ", createdAt="
+				+ createdAt + ", getName()=" + getName() + ", getPhoneNumber()=" + getPhoneNumber()
+				+ ", getcreatedAt()=" + getcreatedAt() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
 	}
 
 }

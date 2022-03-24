@@ -11,6 +11,12 @@ public class Contact {
 	protected String name;
 	protected String phoneNumber;
 	protected LocalDateTime createdAt;
+	
+	public Contact(String name, String phoneNumber, LocalDateTime createdAt) {
+		this.name = name;
+		this.phoneNumber = phoneNumber;
+		this.createdAt = createdAt;
+	}
 
 	public String getName() {
 		return name;
@@ -37,7 +43,7 @@ public class Contact {
 	}
 	
 	
-
+	
 	public static boolean verifier(String phoneNumber) {
 		Pattern ptrn = Pattern.compile("xxx-xxx-xxxx"); 
 		Matcher match = ptrn.matcher(phoneNumber);
