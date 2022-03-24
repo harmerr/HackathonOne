@@ -105,10 +105,10 @@ public class Main {
 				info();
 				break;
 			case "delete":
-				add();
+				delete();
 				break;
 			case "search":
-				add();
+				search();
 				break;
 			case "exit":
 				breakLoop = true;
@@ -220,7 +220,20 @@ public class Main {
 	}
 
 	public static void delete() {
-
+		
+		list();
+		
+		System.out.println("Enter the ID number to delete the contact");
+		int userIDChoice = input.nextInt();
+		input.nextLine();
+		
+		for(int i = 0; i <= contact.size() - 1; i++) {
+			if(i == userIDChoice) {
+				contact.remove(i);
+				System.out.println("Contact successfully deleted!\n");
+			}
+		}
+		
 	}
 
 	public static void search() {
