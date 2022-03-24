@@ -9,9 +9,6 @@ import java.util.*;
 
 public class Main {
 
-	// ArrayList Contact
-	// ArrayList<Contact> contact = new ArrayList<Contact>();
-
 	static ArrayList<Contact> contact = new ArrayList<Contact>();
 	
 	static Scanner input = new Scanner(System.in);
@@ -20,10 +17,6 @@ public class Main {
 
 		//ArrayList Contact
 		//String name;String phoneNumber;createdAt;
-		
-	
-
-		
 		
 	/*	HashMap<String, String> organizations = new  HashMap <String, String> (); 
 		HashMap<String, String> persons = new HashMap <String, String> (); 
@@ -103,13 +96,13 @@ public class Main {
 				add();
 				break;
 			case "list":
-				add();
+				list();
 				break;
 			case "count":
-				add();
+				count();
 				break;
 			case "info":
-				add();
+				info();
 				break;
 			case "delete":
 				add();
@@ -200,15 +193,30 @@ public class Main {
 	}
 
 	public static void list() {
-
+		
+		for(int i = 0; i <= contact.size() - 1; i++) {
+			System.out.println(i + " : " + contact.get(i).getName());
+		}
 	}
 
 	public static void count() {
-
+		
+		System.out.println("There are " + contact.size() + " entries in the phonebook\n");
 	}
 
 	public static void info() {
 
+		list();
+		
+		System.out.println("Enter the ID number to get contact information");
+		int userIDChoice = input.nextInt();
+		input.nextLine();
+		
+		for(int i = 0; i <= contact.size() - 1; i++) {
+			if(i == userIDChoice) {
+				System.out.println(contact.get(i) + "\n");
+			}
+		}
 	}
 
 	public static void delete() {
@@ -216,9 +224,7 @@ public class Main {
 	}
 
 	public static void search() {
-
+		
 	}
-	public static void exit() {
-
-	}
+	
 }

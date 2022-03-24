@@ -42,8 +42,6 @@ public class Contact {
 		this.createdAt = createdAt;
 	}
 	
-	
-	
 	public static boolean verifier(String phoneNumber) {
 		Pattern ptrn = Pattern.compile("xxx-xxx-xxxx"); 
 		Matcher match = ptrn.matcher(phoneNumber);
