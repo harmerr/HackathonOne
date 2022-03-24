@@ -45,7 +45,9 @@ public class Contact {
 	
 	
 	public static boolean verifier(String phoneNumber) {
-		Pattern ptrn = Pattern.compile("xxx-xxx-xxxx"); 
+	
+		
+		Pattern ptrn = Pattern.compile("[0-9]{3}-[0-9]{3}-[0-9]{4}"); 
 		Matcher match = ptrn.matcher(phoneNumber);
 			
 		return (match.find() && match.group().equals(phoneNumber));
