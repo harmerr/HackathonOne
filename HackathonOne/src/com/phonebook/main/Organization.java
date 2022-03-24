@@ -13,10 +13,8 @@ public class Organization extends Contact {
 
 	@Override
 	public String toString() {
-		return "Organization [website=" + website + ", name=" + name + ", phoneNumber=" + phoneNumber + ", createdAt="
-				+ createdAt + ", getName()=" + getName() + ", getPhoneNumber()=" + getPhoneNumber()
-				+ ", getcreatedAt()=" + getcreatedAt() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+		return "Organization [Company name: " + name + ", website: " + website + ", phone number: " + phoneNumber + ", created at: "
+				+ createdAt + "]";
 	}
 
 }
