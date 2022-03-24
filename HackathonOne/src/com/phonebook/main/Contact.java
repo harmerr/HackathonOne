@@ -1,5 +1,3 @@
-//David Toribio
-
 package com.phonebook.main;
 
 import java.time.LocalDateTime;
@@ -51,5 +49,4 @@ public class Contact {
 		return (match.find() && match.group().equals(phoneNumber));
 
 	}
-
 }
