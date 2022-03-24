@@ -1,14 +1,11 @@
-//Users:
-//Date Created:
+/**
+ * @author SudhaPotla, ConnorGoodson, David Toribio, Raymond Harmer
+ */
 
 package com.phonebook.main;
 
-
-import java.security.Key;
-import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.*;
-import java.util.Map.Entry;
 
 public class Main {
 
@@ -17,9 +14,6 @@ public class Main {
 	static Scanner input = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-
-		//ArrayList Contact
-		//String name;String phoneNumber;createdAt;
 		
 	/*	HashMap<String, String> organizations = new  HashMap <String, String> (); 
 		HashMap<String, String> persons = new HashMap <String, String> (); 
@@ -72,20 +66,6 @@ public class Main {
 		until we can firgure out how to implement these commands into the do-while loop
 		
 		*/
-		
-		
-		//System.out.println("Import Person Or Organization");
-	
-		
-		//Create object For organization & Person
-		//Menu Options
-		//Do while loop
-		//Ask user for inputs questions
-		//Asks the user whether they want to add a person or organization.
-
-		//Scanner class
-		//HashMap to store all search results ID & Name
-		//File Writer,File Reader
 	
 		while (true) {
 			System.out.println("Enter desired action: [add] [list] [count] " + "[info] [delete] [search] [exit]");
@@ -256,22 +236,15 @@ public class Main {
 
 	public static void search() {
 		
-		//only returns buisness or persons name 
-	        System.out.print("Enter the name you wish to search: ");
- 
-	        String genName = input.nextLine(); 
-	         
-	        for (int i = 0; i < genName.length(); i++) {
-	        	
-	        	contact.contains(contact.get(i).getName());     	
-	        }
-	        
-	     
-	}
-	       
+		System.out.println("Please enter the name you would like to search.");
+		String userSearch = input.nextLine();
 	
-	public static void exit() {
-
+		for(int i = 0; i <= contact.size() - 1; i++) {
+			
+			if(contact.get(i).getName().contains(userSearch)) {
+				System.out.println(i + " : " + contact.get(i).getName() );
+			}
+		}    
 	}
 	
 }
