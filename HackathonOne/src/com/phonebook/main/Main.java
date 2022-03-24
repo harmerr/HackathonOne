@@ -3,9 +3,12 @@
 
 package com.phonebook.main;
 
+
+import java.security.Key;
 import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.Map.Entry;
 
 public class Main {
 
@@ -147,49 +150,63 @@ public class Main {
 	// **MENU METHODS**
 
 	public static void add() {
-		
+
 		System.out.println("Would you like to create a Person or Organization contact?");
 		String userInput = input.nextLine().toLowerCase();
-		
-		if(userInput.equals("person")) {
+
+		if (userInput.equals("person")) {
 			System.out.println("Enter the person's name ");
 			String userName = input.nextLine();
-			
+
 			System.out.println(("Enter the person's phone number "));
 			String userNumber = input.nextLine();
 			
-			// **VERIFIER**
+			boolean isNumberValid = Contact.verifier(userNumber);
+			if (!isNumberValid) {  
+				System.out.println("The Phone number is not valid");
+			} else {
+				System.out.println("The phone number is valid!");
+			}
 			
+
 			System.out.println("Enter the person's email");
 			String userEmail = input.nextLine();
-			
+
 			System.out.println("Enter the person's date of birth");
 			String userDOB = input.nextLine();
-			
+
 			LocalDateTime createdAt = LocalDateTime.now();
-			
+
 			contact.add(new Person(userName, userNumber, createdAt, userEmail, userDOB));
 			System.out.println("Contact added successfully! \n");
 		}
-		
-		else if(userInput.equals("organization")) {
+
+		else if (userInput.equals("organization")) {
 			System.out.println("Enter the organization's name ");
 			String userName = input.nextLine();
-			
+
 			System.out.println(("Enter the organization's phone number "));
 			String userNumber = input.nextLine();
+
 			
-			// **VERIFIER**
+			boolean isNumberValid = Contact.verifier(userNumber);
+			if (!isNumberValid) {  
+				System.out.println("The Phone number is not valid");
 			
+			} else {
+				System.out.println("The phone number is valid!");
+			}
+			
+
 			System.out.println("Enter the organization's website");
 			String userWebsite = input.nextLine();
-			
+
 			LocalDateTime createdAt = LocalDateTime.now();
-			
+
 			contact.add(new Organization(userName, userNumber, createdAt, userWebsite));
 			System.out.println("Contact added successfully! \n");
 		}
-		
+
 	}
 
 	public static void list() {
@@ -198,7 +215,8 @@ public class Main {
 			System.out.println(i + " : " + contact.get(i).getName());
 		}
 	}
-
+		
+		
 	public static void count() {
 		
 		System.out.println("There are " + contact.size() + " entries in the phonebook\n");
