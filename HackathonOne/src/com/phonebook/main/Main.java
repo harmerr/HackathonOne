@@ -14,7 +14,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.File;
 
-
 public class Main {
 
 	static ArrayList<Contact> contact = new ArrayList<Contact>();
@@ -151,6 +150,7 @@ public class Main {
 			objectOutputStream.writeObject(contact);
 			objectOutputStream.close();
 		} 
+		
 		catch(IOException e) {
 			e.printStackTrace();
 		}
@@ -163,7 +163,7 @@ public class Main {
 		System.out.println("Would you like to create a Person or Organization contact?");
 		String userInput = input.nextLine().toLowerCase();
 
-		if (userInput.equals("person")) {
+		if(userInput.equals("person")) {
 			System.out.println("Enter the person's name ");
 			String userName = input.nextLine();
 
@@ -171,9 +171,10 @@ public class Main {
 			String userNumber = input.nextLine();
 			
 			boolean isNumberValid = Contact.verifier(userNumber);
-			if (!isNumberValid) {  
+			if(!isNumberValid) {  
 				System.out.println("The Phone number is not valid");
-			} else {
+			}
+			else {
 				System.out.println("The phone number is valid!");
 			}
 			
@@ -190,7 +191,7 @@ public class Main {
 			System.out.println("Contact added successfully! \n");
 		}
 
-		else if (userInput.equals("organization")) {
+		else if(userInput.equals("organization")) {
 			System.out.println("Enter the organization's name ");
 			String userName = input.nextLine();
 
