@@ -87,18 +87,14 @@ public class Main {
 		//Scanner class
 		//HashMap to store all search results ID & Name
 		//File Writer,File Reader
-		
-		
-		
-
-	
-	
 	
 		while (true) {
-			System.out.println("Enter desired action: [add] [list] [count]" + "[info] [delete] [search] [exit]");
+			System.out.println("Enter desired action: [add] [list] [count] " + "[info] [delete] [search] [exit]");
 
 			String userInput = input.nextLine();
 
+			boolean breakLoop = false;
+			
 			switch (userInput) {
 			case "add":
 				add();
@@ -119,11 +115,18 @@ public class Main {
 				add();
 				break;
 			case "exit":
-				add();
+				breakLoop = true;
 				break;
 			
 			}
+			
+			if(breakLoop) {
+				break;
+			}
 		}
+		
+		System.out.println("Thank you, have a great day.");
+		
 		// input.close();
 		// System.out.println("Import Person Or Organization");
 
