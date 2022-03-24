@@ -3,6 +3,7 @@
 
 package com.phonebook.main;
 
+import java.sql.Date;
 import java.util.*;
 
 public class Main {
@@ -90,7 +91,7 @@ public class Main {
 		
 		
 
-	}
+	
 	
 	
 		while (true) {
@@ -127,6 +128,12 @@ public class Main {
 		// System.out.println("Import Person Or Organization");
 
 		// Create object For organization & Person
+		//String name, String phoneNumber, String email, Date dob)
+		Person p=new Person(name, phoneNumber, email, dob);
+		
+		//(String name, String phoneNumber,  String website)
+		Organization o=new Organization(name,phoneNumber,website);
+		
 		// Menu Options
 		// Do while loop
 		// Ask user for inputs questions
