@@ -4,6 +4,7 @@
 package com.phonebook.main;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class Main {
@@ -11,14 +12,16 @@ public class Main {
 	// ArrayList Contact
 	// ArrayList<Contact> contact = new ArrayList<Contact>();
 
+	static ArrayList<Contact> contact = new ArrayList<Contact>();
+	
+	static Scanner input = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 
 		//ArrayList Contact
-		ArrayList<Contact> contact = new ArrayList<Contact>();
-		contact.add(new Contact());
 		//String name;String phoneNumber;createdAt;
 		
-		Scanner input = new Scanner(System.in);
+	
 
 		
 		
@@ -132,10 +135,10 @@ public class Main {
 
 		// Create object For organization & Person
 		//String name, String phoneNumber, String email, Date dob)
-		Person p=new Person(name, phoneNumber, email, dob);
+		//Person p=new Person(name, phoneNumber, email, dob);
 		
 		//(String name, String phoneNumber,  String website)
-		Organization o=new Organization(name,phoneNumber,website);
+		//Organization o=new Organization(name,phoneNumber,website);
 		
 		// Menu Options
 		// Do while loop
@@ -151,7 +154,49 @@ public class Main {
 	// **MENU METHODS**
 
 	public static void add() {
-		System.out.println("Hello");
+		
+		System.out.println("Would you like to create a Person or Organization contact?");
+		String userInput = input.nextLine().toLowerCase();
+		
+		if(userInput.equals("person")) {
+			System.out.println("Enter the person's name ");
+			String userName = input.nextLine();
+			
+			System.out.println(("Enter the person's phone number "));
+			String userNumber = input.nextLine();
+			
+			// **VERIFIER**
+			
+			System.out.println("Enter the person's email");
+			String userEmail = input.nextLine();
+			
+			System.out.println("Enter the person's date of birth");
+			String userDOB = input.nextLine();
+			
+			LocalDateTime createdAt = LocalDateTime.now();
+			
+			contact.add(new Person(userName, userNumber, createdAt, userEmail, userDOB));
+			System.out.println("Contact added successfully! \n");
+		}
+		
+		else if(userInput.equals("organization")) {
+			System.out.println("Enter the organization's name ");
+			String userName = input.nextLine();
+			
+			System.out.println(("Enter the organization's phone number "));
+			String userNumber = input.nextLine();
+			
+			// **VERIFIER**
+			
+			System.out.println("Enter the organization's website");
+			String userWebsite = input.nextLine();
+			
+			LocalDateTime createdAt = LocalDateTime.now();
+			
+			contact.add(new Organization(userName, userNumber, createdAt, userWebsite));
+			System.out.println("Contact added successfully! \n");
+		}
+		
 	}
 
 	public static void list() {
@@ -173,7 +218,6 @@ public class Main {
 	public static void search() {
 
 	}
-
 	public static void exit() {
 
 	}
