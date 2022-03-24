@@ -243,6 +243,23 @@ public class Main {
 
 	public static void search() {
 		
+		//only returns buisness or persons name 
+	        System.out.print("Enter the name you wish to search: ");
+ 
+	        String genName = input.nextLine(); 
+	         
+	        for (int i = 0; i < genName.length(); i++) {
+	        	
+	        	contact.contains(contact.get(i).getName());     	
+	        }
+	        
+	     
+	}
+	       
+	
+	public static void exit() {
+
 	}
 	
 }
+
